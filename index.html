@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color-flipper </title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        button{
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            color: rgb(0, 0, 0);
+        }
+        .button-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <h1 id="colour">BACKGROUND COLOR : <span id="whichColour">white</span></h1>
+        <div class="button-container">
+            <button onclick="flipColor()">Click to change</button>
+        </div>
+    </div>
+    
+    <script>
+        let colors = ['red', 'yellow', 'blue', 'green', 'orange', 'pink', 'grey', 'cyan', 'magenta', 'teal'];
+        function flipColor()
+        {
+            const randomIndex = Math.floor(Math.random()*colors.length);
+            const selectedColor = colors[randomIndex];
+            document.body.style.backgroundColor = selectedColor;
+            document.getElementById('whichColour').innerText = selectedColor;
+        }
+    </script>
+</body>
+</html>
